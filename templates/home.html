@@ -18,7 +18,10 @@
     <script>
         function handleSubmit(event) {
             fetch("/send_sms", {
-                method: "POST"
+                method: "POST",
+                headers: {
+                    "Content-Type": "application"
+                } 
             })
             .then(res => {
                 return res.json();
@@ -30,6 +33,5 @@
                 console.log(err);
             });
         }
-    
     </script>
 </html>
